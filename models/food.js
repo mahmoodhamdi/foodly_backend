@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const foodsSchema = new mongoose.Schema({
+const foodSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true
@@ -10,7 +10,7 @@ const foodsSchema = new mongoose.Schema({
         type: String,
         required: true
     }, imageUrl: {
-        type: String,
+        type: Array,
         required: true
     },
     foodTags: {
@@ -62,4 +62,4 @@ const foodsSchema = new mongoose.Schema({
 }
 
 );
-module.exports = mongoose.model('Foods', foodsSchema)
+module.exports = mongoose.model('Food', foodSchema)
