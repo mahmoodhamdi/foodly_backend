@@ -26,6 +26,7 @@ module.exports = {
             res.status(500).json({ message: err.message, success: false });
         }
     },
+
     // getAllFoods: async (req, res) => {
 
     //     try {
@@ -35,7 +36,7 @@ module.exports = {
     //         res.status(500).json({ message: err.message, success: false });
     //     }
     // },
-    getNearByFoods: async (req, res) => {
+    getRandomFoods: async (req, res) => {
         const code = req.params.code;
         try {
             let foods;
