@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const categoryController = require('../controllers/categoryController');
-router.post('/create', categoryController.CreateCategory);
-router.get('/all', categoryController.GetAllCategories);
-router.get('/random', categoryController.GetRandomCategories);
+const restuarantController = require('../controllers/restuarantController');
+router.post('/add', restuarantController.addRestuarant);
+router.get('/all/:code', restuarantController.GetAllNearbyRestuarants);
+router.get('/:code', restuarantController.GetRandomRestuarants);
+router.get('/:id', restuarantController.GetRestaurantById);
 module.exports = router
