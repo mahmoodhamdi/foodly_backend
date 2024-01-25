@@ -1,4 +1,3 @@
-const restuarant = require('../models/restuarant');
 const Restuarant = require('../models/restuarant');
 module.exports = {
     addRestuarant: async (req, res) => {
@@ -18,12 +17,12 @@ module.exports = {
     },
     GetRandomRestuarants: async (req, res) => {
         const code = req.params.code;
+        let randomRestuarants = [];
 
         try {
-            let randomRestuarants = [];
             if (code) {
                 randomRestuarants = await Restuarant.aggregate([
-                    { $match: { code: code, isavailable: true } },
+                    { $match: { code: code, isAvailable: true } },
 
                     {
                         $sample: {
@@ -36,14 +35,16 @@ module.exports = {
             }
             if (randomRestuarants.length === 0) {
                 randomRestuarants = await Restuarant.aggregate([
-                    { $match: { code: code, isavailable: true } },
+                    { $match: { isAvailable: true } },
+                    { $sample: { size: 10 } }
+
                 ]);
 
             }
 
 
 
-            res.status(200).json({ message: 'Restuarants fetched successfully', restuarants: randomRestuarants, success: true });
+            res.status(200).json({ message: 'Restuarants fetched successfully', randomRestuarants: randomRestuarants, success: true });
         } catch (err) {
             res.status(500).json({ message: err.message, success: false });
         }
@@ -51,7 +52,7 @@ module.exports = {
         const restuarantId = req.params.id;
         try {
             const restuarant = await Restuarant.findOne({ _id: restuarantId }, { __v: 0 });
-            res.status(200).json({ message: 'Restuarants fetched successfully', categories: categories, success: true });
+            res.status(200).json({ message: 'Restuarants fetched successfully', categories: restuarant, success: true });
         } catch (err) {
             res.status(500).json({ message: err.message, success: false });
         }
@@ -63,16 +64,13 @@ module.exports = {
             let allRestuarants = [];
             if (code) {
                 allRestuarants = await Restuarant.aggregate([
-                    { $match: { code: code, isavailable: true } },
-
-
-
+                    { $match: { code: code, isAvailable: true } },
                     { $match: { project: { __v: 0 } } },
                 ]);
             }
             if (allRestuarants.length === 0) {
                 allRestuarants = await Restuarant.aggregate([
-                    { $match: { code: code, isavailable: true } },
+                    { $match: { code: code, isAvailable: true } },
                 ]);
 
             }

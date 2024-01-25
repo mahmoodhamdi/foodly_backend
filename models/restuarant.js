@@ -9,8 +9,7 @@ const restuarantSchema = new mongoose.Schema({
     },
     value: {
         type: String,
-        required: true
-
+        default: "Restaurant",
     },
     imageUrl: {
         type: String,
@@ -51,7 +50,6 @@ const restuarantSchema = new mongoose.Schema({
     rating: {
         type: Number,
         min: 0, max: 5, default: 3,
-        required: true
     },
     ratingCount: {
         type: String,
