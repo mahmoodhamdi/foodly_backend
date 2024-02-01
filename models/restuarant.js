@@ -1,7 +1,6 @@
 const e = require('express');
-const { verify } = require('jsonwebtoken');
 const mongoose = require('mongoose');
-const restuarantSchema = new mongoose.Schema({
+const restaurantSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true
@@ -65,7 +64,7 @@ const restuarantSchema = new mongoose.Schema({
 
     verificationMessage: {
         type: String,
-        default: "You can verify your restuarant by clicking on the link sent to your email",
+        default: "You can verify your restaurant by clicking on the link sent to your email",
     },
     coords: {
         id: {
@@ -95,4 +94,4 @@ const restuarantSchema = new mongoose.Schema({
     }
 
 });
-module.exports = mongoose.model('Restuarant', restuarantSchema)
+module.exports = mongoose.model('Restaurant', restaurantSchema)

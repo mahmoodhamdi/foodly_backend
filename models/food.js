@@ -21,7 +21,7 @@ const foodSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    foodtype: {
+    foodType: {
         type: Array,
         required: true
     },
@@ -33,7 +33,7 @@ const foodSchema = new mongoose.Schema({
         type: Boolean,
         default: true
     },
-    restuarant: {
+    restaurant: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
     },
@@ -53,7 +53,7 @@ const foodSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    additive: {
+    additives: {
         type: Array,
         default: []
 

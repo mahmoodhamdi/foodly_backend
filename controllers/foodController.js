@@ -1,10 +1,10 @@
 const { $where } = require('../models/food');
 
-Food = require('../models/food')
+Food = require('../models/food');
 module.exports = {
     addFood: async (req, res) => {
-        const { title, time, imageUrl, foodTags, category, additive, description, price, restuarant, code } = req.body;
-        if (!title || !time || !imageUrl || !foodTags || !category || !additive || !description || !price || !restuarant || !code) {
+        const { title, foodTags, foodType, code, category, restaurant, description, time, additives, price, imageUrl } = req.body;
+        if (!title || !foodTags || !foodType || !code || !category || !restaurant || !description || !time || !additives || !price || !imageUrl) {
             return res.status(400).json({ message: 'All fields are required', success: false });
         }
         try {
@@ -26,17 +26,7 @@ module.exports = {
             res.status(500).json({ message: err.message, success: false });
         }
     },
-
-    // getAllFoods: async (req, res) => {
-
-    //     try {
-    //         const foods = await Food.agg
-    //         res.status(200).json({ message: 'Foods fetched successfully', foods: foods, success: true });
-    //     } catch (err) {
-    //         res.status(500).json({ message: err.message, success: false });
-    //     }
-    // },
-    getRandomFoods: async (req, res) => {
+     getRandomFoods: async (req, res) => {
         const code = req.params.code;
         try {
             let foods;
@@ -65,11 +55,11 @@ module.exports = {
     },
 
 
-    //Restuarant Menu
-    getFoodsByRestuarant: async (req, res) => {
+    //Restaurant Menu
+    getFoodsByRestaurant: async (req, res) => {
         const id = req.params.id;
         try {
-            const foods = await Food.find({ restuarant: id }, { __v: 0 });
+            const foods = await Food.find({ restaurant: id }, { __v: 0 });
             res.status(200).json({ message: 'Foods fetched successfully', foods: foods, success: true });
         } catch (err) {
             res.status(500).json({ message: err.message, success: false });
