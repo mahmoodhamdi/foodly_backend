@@ -1,0 +1,254 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "foodly",
+    "dateExported": "2024-02-02T05:36:04.807Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "c6fce87a-f66c-4ec2-800a-3f3020115f4d",
+            "name": "category",
+            "containerId": "",
+            "created": "2024-02-02T05:32:37.959Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "7493885a-ec83-42dd-b0d7-b8736d9fbde8",
+            "name": "resturant",
+            "containerId": "",
+            "created": "2024-02-02T05:33:42.640Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "f3479f9b-d3b0-4f8e-8a92-f66c3ecda4cc",
+            "name": "foods",
+            "containerId": "",
+            "created": "2024-02-02T05:34:41.756Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "530a63b0-7650-4920-8f3d-524df794ff40",
+            "colId": "01a0b0e5-679b-45d4-9247-023d0fb2667a",
+            "containerId": "c6fce87a-f66c-4ec2-800a-3f3020115f4d",
+            "name": "all categoires",
+            "url": "localhost:6013/api/category/all",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-02-01T20:32:53.949Z",
+            "modified": "2024-02-01T20:32:53.949Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a097d32f-76dd-4601-8ba9-52178cebd46c",
+            "colId": "01a0b0e5-679b-45d4-9247-023d0fb2667a",
+            "containerId": "7493885a-ec83-42dd-b0d7-b8736d9fbde8",
+            "name": "add restaurant",
+            "url": "localhost:6013/api/restaurant/add",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-01T20:33:40.628Z",
+            "modified": "2024-02-01T20:33:40.628Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"Lapisara Eatery\",\n  \"time\": \"15 min\",\n  \"owner\": \"fdfsdfsdsszdacsdfs\",\n  \"code\": \"41007428\",\n  \"logoUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n  \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n  \"rating\": 5,\n  \"ratingCount\": 6765,\n  \"coords\": {\n    \"id\": 2023,\n    \"latitude\": 37.78792117665919,\n    \"longitude\": -122.41325651079953,\n    \"address\": \"698 Post St, San Francisco, CA 94109, United States\",\n    \"title\": \"Lapisara Eatery\"\n  }\n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "4aa85150-1c80-4b16-9828-461766e03e23",
+            "colId": "01a0b0e5-679b-45d4-9247-023d0fb2667a",
+            "containerId": "f3479f9b-d3b0-4f8e-8a92-f66c3ecda4cc",
+            "name": "add food",
+            "url": "localhost:6013/api/foods/add",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-01T20:34:20.475Z",
+            "modified": "2024-02-01T20:34:20.475Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{  \n    \"title\": \"Tropical Fruit Smoothie\",\n    \"foodTags\": [\"Fruit\", \"Smoothie\", \"Refreshing\", \"Sweet\", \"Cold\"],\n    \"foodType\": [\"Drink\", \"Breakfast\", \"Snack\", \"Dessert\", \"Vegan\"],\n    \"code\": \"41007428\",\n    \"category\": \"41007428\",\n    \"isAvailable\": true,\n    \"restaurant\": \"65bbf5afa1b9502bf3eb56e5\",\n    \"rating\": 4.7,\n    \"ratingCount\": \"280\",\n    \"description\": \"A delightful blend of tropical fruits, creating the perfect sweet and refreshing drink.\",\n    \"time\":\"15 min\",\n    \"price\": 6.99,\n    \"additives\": [\n        { \"id\": 1, \"title\": \"Mango\", \"price\": \"2.00\" },\n        { \"id\": 2, \"title\": \"Pineapple\", \"price\": \"1.50\" },\n        { \"id\": 3, \"title\": \"Banana\", \"price\": \"1.00\" },\n        { \"id\": 4, \"title\": \"Coconut Milk\", \"price\": \"1.50\" },\n        { \"id\": 5, \"title\": \"Ice\", \"price\": \"0.50\" }\n    ],\n    \"imageUrl\": [\"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\"]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "abffcddc-5b19-4479-93f0-84787da5a04c",
+            "colId": "01a0b0e5-679b-45d4-9247-023d0fb2667a",
+            "containerId": "c6fce87a-f66c-4ec2-800a-3f3020115f4d",
+            "name": "random category",
+            "url": "localhost:6013/api/category/random",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-02-01T20:33:14.363Z",
+            "modified": "2024-02-01T20:33:14.363Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8d360355-e400-49cd-aa95-ef2fad2242f0",
+            "colId": "01a0b0e5-679b-45d4-9247-023d0fb2667a",
+            "containerId": "7493885a-ec83-42dd-b0d7-b8736d9fbde8",
+            "name": "getAllNearbyRestaurants",
+            "url": "localhost:6013/api/restaurant/all/?code=41007428",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-02-01T20:33:55.909Z",
+            "modified": "2024-02-01T20:33:55.909Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "code",
+                    "value": "41007428",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "75a6cccd-86f0-4bc8-9ebc-412c92a4541b",
+            "colId": "01a0b0e5-679b-45d4-9247-023d0fb2667a",
+            "containerId": "f3479f9b-d3b0-4f8e-8a92-f66c3ecda4cc",
+            "name": "get food by id",
+            "url": "localhost:6013/api/foods/by/65bbfed3c7a711c7ef8654cf",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-02-02T05:31:56.811Z",
+            "modified": "2024-02-02T05:31:56.811Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "226dd0f5-bf9d-40fe-8561-0cfc1b649b0a",
+            "colId": "01a0b0e5-679b-45d4-9247-023d0fb2667a",
+            "containerId": "c6fce87a-f66c-4ec2-800a-3f3020115f4d",
+            "name": "create category",
+            "url": "localhost:6013/api/category/create",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-02-01T20:33:25.129Z",
+            "modified": "2024-02-01T20:33:25.129Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n         \"title\": \"Pasta\",\n        \"value\": \"pasta\",\n        \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/6645cf41-bc89-4dd0-9f80-bba9487633b2-Spaghetti.png\"\n  \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "98710a29-7cca-41fb-aaba-35659de84dde",
+            "colId": "01a0b0e5-679b-45d4-9247-023d0fb2667a",
+            "containerId": "7493885a-ec83-42dd-b0d7-b8736d9fbde8",
+            "name": "getRandomRestaurants",
+            "url": "localhost:6013/api/restaurant/code",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-02-01T20:33:48.643Z",
+            "modified": "2024-02-01T20:33:48.643Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "42aee590-65db-46db-865e-06445d69e289",
+            "colId": "01a0b0e5-679b-45d4-9247-023d0fb2667a",
+            "containerId": "f3479f9b-d3b0-4f8e-8a92-f66c3ecda4cc",
+            "name": "get restuarant foods",
+            "url": "localhost:6013/api/foods/restaurant-foods/65bbf5afa1b9502bf3eb56e5",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-02-02T05:32:03.327Z",
+            "modified": "2024-02-02T05:32:03.327Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f40cebaf-8767-463c-897c-6722c31b99b7",
+            "colId": "01a0b0e5-679b-45d4-9247-023d0fb2667a",
+            "containerId": "7493885a-ec83-42dd-b0d7-b8736d9fbde8",
+            "name": "get resturant by id",
+            "url": "localhost:6013/api/restaurant/by/?id=65bbf5afa1b9502bf3eb56e5",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-02-01T20:34:02.143Z",
+            "modified": "2024-02-01T20:34:02.143Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "65bbf5afa1b9502bf3eb56e5",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "2fe68193-f8ca-4a30-b20d-0f09a0b09f21",
+            "colId": "01a0b0e5-679b-45d4-9247-023d0fb2667a",
+            "containerId": "f3479f9b-d3b0-4f8e-8a92-f66c3ecda4cc",
+            "name": "get food by category and code",
+            "url": "localhost:6013/api/foods/fried_rice/41007428",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-02-02T05:32:10.459Z",
+            "modified": "2024-02-02T05:32:10.459Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1bc246e5-27e3-4fd1-9095-323dead1e816",
+            "colId": "01a0b0e5-679b-45d4-9247-023d0fb2667a",
+            "containerId": "f3479f9b-d3b0-4f8e-8a92-f66c3ecda4cc",
+            "name": "get foods by search",
+            "url": "localhost:6013/api/foods/search/Mango",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-02-02T05:31:41.628Z",
+            "modified": "2024-02-02T05:31:41.628Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "84b51d16-ad36-418e-819e-b82a6c8945c0",
+            "colId": "01a0b0e5-679b-45d4-9247-023d0fb2667a",
+            "containerId": "f3479f9b-d3b0-4f8e-8a92-f66c3ecda4cc",
+            "name": "get random foods recommendation",
+            "url": "localhost:6013/api/foods/recommendation/41007428",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-02-02T05:31:33.429Z",
+            "modified": "2024-02-02T05:31:33.430Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ae83e61a-4ee4-4834-8172-ac78a9f820ca",
+            "colId": "01a0b0e5-679b-45d4-9247-023d0fb2667a",
+            "containerId": "f3479f9b-d3b0-4f8e-8a92-f66c3ecda4cc",
+            "name": "get random food by code",
+            "url": "localhost:6013/api/foods/random/41007428",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-02-02T05:31:50.011Z",
+            "modified": "2024-02-02T05:31:50.011Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
