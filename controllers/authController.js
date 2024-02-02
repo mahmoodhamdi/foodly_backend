@@ -2,7 +2,7 @@ const User = require('../models/user');
 const generateOtp = require('../utils/generateOtp');
 const cryptoJs = require('crypto-js');
 const jwt = require('jsonwebtoken');
-
+const sendEmail = require('../utils/smtp_function');
 
 
 module.exports = {
@@ -31,8 +31,10 @@ module.exports = {
                 phone: req.body.phone,
                 otp: otp
             });
-            const savedUser = await newUser.save();
-            res.status(200).json({ message: 'User created successfully', user: savedUser, success: true });
+            await newUser.save();
+            // send email with otp
+            sendEmail(newUser.email, otp);
+            res.status(200).json({ message: 'User created successfully', success: true });
         }
 
         catch (error) {
@@ -59,6 +61,7 @@ module.exports = {
             if (decryptedPasswordToString !== req.body.password) {
                 return res.status(400).json({ message: 'Incorrect password', success: false });
             }
+
             // if (user.otp !== req.body.otp) {
             //     return res.status(400).json({ message: 'Incorrect OTP', success: false });
             // }
