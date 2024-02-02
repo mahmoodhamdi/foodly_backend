@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const CategoryRouter = require('./routes/category');
 const RestaurantRouter = require('./routes/restaurant');
 const FoodRouter = require('./routes/food');
+const RatingRouter = require('./routes/rating');
 dotenv.config();
 mongoose.connect(process.env.MONGOURI)
     .then(() => console.log("Foodly Database connected"))
@@ -14,5 +15,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/category', CategoryRouter);
 app.use("/api/restaurant", RestaurantRouter);
 app.use("/api/foods", FoodRouter);
+app.use("/api/rating", RatingRouter);
 
 app.listen(process.env.PORT, () => console.log(`Foodly app listening on port ${process.env.PORT}!`))    
