@@ -54,34 +54,31 @@ module.exports = {
         }
     },
     getRecommendedFoods: async (req, res) => {
-        const code = req.params.code;
+
         try {
-            let foods;
-            if (code) {
+            let foods = [];
+            if (req.params.code) {
 
                 foods = await Food.aggregate([
-                    { $match: { code: code, isAvailable: true } },
+                    { $match: { code: req.params.code } },
+                    { $sample: { size: 5 } },
+                    { $match: { project: { __v: 0 } } }
+
+                ]);
+            }
+            if (!foods.length) {
+
+                foods = await Food.aggregate([
                     { $match: { project: { __v: 0 } } },
                     { $sample: { size: 10 } }
                 ]);
-            }
-            if (foods.length === 0) {
-
-                foods = await Food.aggregate([
-                    { $match: { isAvailable: true } },
-                    { $match: { project: { __v: 0 } } },
-                    { $sample: { size: 10 } }
-                ]);
 
             }
-            if (foods.length === 0) {
-
-                foods = await Food.aggregate([
-                    { $sample: { size: 10 } }
-                ]);
-
+            if (foods.length) {
+                res.status(200).json({ message: 'Foods fetched successfully', foods: foods, success: true });
+            } else {
+                res.status(404).json({ message: "No food found", success: false });
             }
-            res.status(200).json({ message: 'Foods fetched successfully', foods: foods, success: true });
 
         } catch (err) {
             res.status(500).json({ message: err.message, success: false });
