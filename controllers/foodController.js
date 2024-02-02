@@ -26,7 +26,7 @@ module.exports = {
             res.status(500).json({ message: err.message, success: false });
         }
     },
-     getRandomFoods: async (req, res) => {
+    getNearbyFoods: async (req, res) => {
         const code = req.params.code;
         try {
             let foods;
@@ -51,6 +51,40 @@ module.exports = {
 
         } catch (err) {
 
+        }
+    },
+    getRecommendedFoods: async (req, res) => {
+        const code = req.params.code;
+        try {
+            let foods;
+            if (code) {
+
+                foods = await Food.aggregate([
+                    { $match: { code: code, isAvailable: true } },
+                    { $match: { project: { __v: 0 } } },
+                    { $sample: { size: 10 } }
+                ]);
+            }
+            if (foods.length === 0) {
+
+                foods = await Food.aggregate([
+                    { $match: { isAvailable: true } },
+                    { $match: { project: { __v: 0 } } },
+                    { $sample: { size: 10 } }
+                ]);
+
+            }
+            if (foods.length === 0) {
+
+                foods = await Food.aggregate([
+                    { $sample: { size: 10 } }
+                ]);
+
+            }
+            res.status(200).json({ message: 'Foods fetched successfully', foods: foods, success: true });
+
+        } catch (err) {
+            res.status(500).json({ message: err.message, success: false });
         }
     },
 
