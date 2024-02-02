@@ -64,4 +64,23 @@ module.exports = {
             res.status(500).json({ message: err.message, success: false });
         }
     },
+    checkUserRating: async (req, res) => {
+        const { userId, ratingType, product } = req.body;
+        try {
+            const existingRating = await Rating.findOne({
+                userId: req.body.userId,
+                ratingType: req.body.ratingType,
+                product: req.body.product
+
+            });
+            if (existingRating) {
+                res.status(200).json({ message: 'You have already rated this ${ratingType}', success: true });
+            } else {
+                res.status(404).json({ message: 'You have not rated this ${ratingType}', success: false });
+            }
+
+        } catch (error) {
+            res.status(500).json({ message: error.message, success: false });
+        }
+    }
 };
