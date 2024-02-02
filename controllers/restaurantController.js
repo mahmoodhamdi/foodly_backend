@@ -1,4 +1,4 @@
-const Restaurant = require('../models/restuarant');
+const Restaurant = require('../models/restaurant');
 module.exports = {
     addRestaurant: async (req, res) => {
         const { title, imageUrl, coords, time, code, owner, logoUrl } = req.body;

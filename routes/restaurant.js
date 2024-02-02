@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const restaurantController = require('../controllers/restuarantController');
+const restaurantController = require('../controllers/restaurantController');
 router.post('/add', restaurantController.addRestaurant);
 router.get('/all/:code', restaurantController.getAllNearbyRestaurants);
 router.get('/:code', restaurantController.getRandomRestaurants);

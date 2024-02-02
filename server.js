@@ -3,7 +3,7 @@ const app = express()
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const CategoryRouter = require('./routes/category');
-const RestaurantRouter = require('./routes/resuarant');
+const RestaurantRouter = require('./routes/restaurant');
 const FoodRouter = require('./routes/food');
 dotenv.config();
 mongoose.connect(process.env.MONGOURI)
