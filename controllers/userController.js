@@ -9,6 +9,13 @@ module.exports = {
         } catch (error) {
             res.status(500).json({ message: error.message, success: false });
         }
+    }, deleteUser: async (req, res) => {
+        try {
+            const user = await User.findByIdAndDelete(req.params.id);
+            res.status(200).json({ message: 'User deleted successfully', success: true });
+        } catch (error) {
+            res.status(500).json({ message: error.message, success: false });
+        }
     },
     verifyAccount: async (req, res) => {
         try {
