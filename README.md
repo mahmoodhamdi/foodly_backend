@@ -66,6 +66,5 @@ Foodly Multi-vendor is a platform designed to facilitate the ordering of food fr
 ![image](https://github.com/mahmoodhamdi/foodly_backend/assets/148990144/b1162642-5d85-41f6-a7c4-c9b7b63cbacf)
 ![image](https://github.com/mahmoodhamdi/foodly_backend/assets/148990144/2af69114-3529-49b4-b4d2-677724672ddc)
 ![image](https://github.com/mahmoodhamdi/foodly_backend/assets/148990144/509574e3-279f-4f22-ab58-e1541945620f)
- 
-
+![image](https://github.com/mahmoodhamdi/foodly_backend/assets/148990144/4f3ec6c8-cc0d-4ba9-b60c-4084eccb74d8)
 
