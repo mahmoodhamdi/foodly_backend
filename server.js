@@ -17,7 +17,7 @@ mongoose.connect(process.env.MONGOURI)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/', AuthRouter);
-app.use('/user', UserRouter);
+app.use('/api/user', UserRouter);
 app.use('/api/category', CategoryRouter);
 app.use("/api/restaurant", RestaurantRouter);
 app.use("/api/foods", FoodRouter);
